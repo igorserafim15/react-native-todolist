@@ -9,6 +9,8 @@ export const theme = createTheme({
   spacing,
   textVariants,
   buttonVariants,
+  boxVariants: {},
+  inputVariants: {},
 })
 
 export type Theme = typeof theme

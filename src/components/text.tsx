@@ -1,8 +1,8 @@
 import { Theme } from '@/theme'
-import { Text as RNText } from 'react-native'
 import {
   VariantProps,
   createRestyleComponent,
+  createText,
   createVariant,
 } from '@shopify/restyle'
 
@@ -10,14 +10,11 @@ const variants = createVariant<Theme, 'textVariants'>({
   themeKey: 'textVariants',
 })
 
+const TextComponent = createText<Theme>()
+
 type TextProps = VariantProps<Theme, 'textVariants'> &
-  React.ComponentProps<typeof RNText>
+  React.ComponentProps<typeof TextComponent>
 
-const TextComponent = createRestyleComponent<TextProps, Theme>(
-  [variants],
-  RNText,
-)
+const Text = createRestyleComponent<TextProps, Theme>([variants], TextComponent)
 
-export function Text(props: TextProps) {
-  return <TextComponent {...props} />
-}
+export { Text, type TextProps }

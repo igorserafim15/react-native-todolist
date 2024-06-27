@@ -1,6 +1,4 @@
-import { VariantsAllProps } from './@types'
-
-export const buttonVariants: VariantsAllProps = {
+export const buttonVariants = {
   outlined: {
     padding: 'lg',
   },

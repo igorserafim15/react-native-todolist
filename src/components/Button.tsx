@@ -5,7 +5,6 @@ import {
   createVariant,
 } from '@shopify/restyle'
 import { Pressable } from 'react-native'
-import { Text } from './text'
 
 const variants = createVariant<Theme, 'buttonVariants'>({
   themeKey: 'buttonVariants',
@@ -19,10 +18,8 @@ const ButtonComponent = createRestyleComponent<ButtonProps, Theme>(
   Pressable,
 )
 
-export function Button({ children, ...props }: ButtonProps) {
-  return (
-    <ButtonComponent {...props}>
-      <Text variant="header">{children}</Text>
-    </ButtonComponent>
-  )
+function Button({ children, ...props }: ButtonProps) {
+  return <ButtonComponent {...props}>{children}</ButtonComponent>
 }
+
+export { Button, type ButtonProps }

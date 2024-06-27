@@ -1,6 +1,4 @@
-import { VariantsAllProps } from './@types'
-
-export const textVariants: VariantsAllProps = {
+export const textVariants = {
   header: {
     fontFamily: 'Inter_700Bold',
     fontWeight: 'bold',
