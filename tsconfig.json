@@ -4,7 +4,9 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "commonjs",
-    "types": ["react-native"],
+    "types": [
+      "react-native"
+    ],
     "lib": [
       "es2019",
       "es2020.bigint",
@@ -32,7 +34,10 @@
     "skipLibCheck": true,
     "baseUrl": "./",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
-  }
+  },
+  "extends": "expo/tsconfig.base"
 }

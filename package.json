@@ -10,7 +10,11 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo-google-fonts/inter": "^0.2.3",
+    "@shopify/restyle": "^2.4.4",
+    "babel-plugin-module-resolver": "^5.0.2",
     "expo": "~51.0.14",
+    "expo-font": "~12.0.7",
     "expo-status-bar": "~1.12.1",
     "react": "18.2.0",
     "react-native": "0.74.2"
@@ -24,7 +28,9 @@
     "typescript": "^5.5.2"
   },
   "eslintConfig": {
-    "extends": ["@rocketseat/eslint-config/react"],
+    "extends": [
+      "@rocketseat/eslint-config/react"
+    ],
     "rules": {
       "@typescript-eslint/no-non-null-assertion": "off",
       "react-hooks/exhaustive-deps": "off"
