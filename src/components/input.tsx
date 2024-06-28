@@ -21,7 +21,7 @@ const InputComponent = createRestyleComponent<InputProps, Theme>(
 
 const InputBox = createBox<Theme>()
 
-function Input({ ...props }: InputProps) {
+function Input(props: InputProps) {
   return (
     <InputBox>
       <InputComponent {...props} />

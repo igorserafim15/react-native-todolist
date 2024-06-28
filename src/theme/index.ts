@@ -3,13 +3,14 @@ import { colors } from './colors'
 import { spacing } from './spacing'
 import { textVariants } from './textVariants'
 import { buttonVariants } from './buttonVariants'
+import { boxVariants } from './boxVariants'
 
 export const theme = createTheme({
   colors,
   spacing,
   textVariants,
   buttonVariants,
-  boxVariants: {},
+  boxVariants,
   inputVariants: {},
 })
 

@@ -1,22 +1,22 @@
 export const textVariants = {
-  header: {
+  title: {
     fontFamily: 'Inter_700Bold',
     fontWeight: 'bold',
     fontSize: 34,
     lineHeight: 42.5,
     color: 'textPrimary',
   },
-  subheader: {
+  subtitle: {
     fontFamily: 'Inter_700Bold',
     fontWeight: '600',
     fontSize: 28,
     lineHeight: 36,
     color: 'textPrimary',
   },
-  body: {
+  label: {
     fontFamily: 'Inter_400Regular',
-    fontSize: 16,
-    lineHeight: 24,
+    fontSize: 14,
+    lineHeight: 21,
     color: 'textSecondary',
   },
   button: {
@@ -25,10 +25,13 @@ export const textVariants = {
     lineHeight: 24,
     color: 'textPrimary',
   },
-  defaults: {
+  body: {
     fontFamily: 'Inter_400Regular',
     fontSize: 16,
     lineHeight: 24,
-    color: 'textSecondary',
+    color: 'textPrimary',
+  },
+  defaults: {
+    fontFamily: 'Inter_400Regular',
   },
 }

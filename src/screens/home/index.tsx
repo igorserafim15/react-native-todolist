@@ -1,25 +1,29 @@
-import { Button } from '@/components/button'
-import { Checkbox } from '@/components/checkbox'
-import { Task } from '@/components/task'
+import { Box } from '@/components/box'
+import Logo from '@/assets/logo.svg'
 import { Text } from '@/components/text'
-import { View } from 'react-native'
 
 export function Home() {
   return (
-    <View>
-      <Text variant="body">Home</Text>
-      <Button variant="outlined">Clique aqui</Button>
+    <Box backgroundColor="mainBackground" flexGrow={1}>
+      <Box
+        backgroundColor="headerBackground"
+        justifyContent="center"
+        alignItems="center"
+        height={200}
+      >
+        <Logo />
+      </Box>
 
-      <Task>
-        <Checkbox checked onChecked={() => {}} />
-
-        <Text>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
-          voluptatem!
-        </Text>
-
-        <Button>oi</Button>
-      </Task>
-    </View>
+      <Box padding="lg">
+        <Box variant="horizontal" justifyContent="space-between">
+          <Text fontSize={14} color="accentPrimary" fontWeight="bold">
+            Criadas
+          </Text>
+          <Text fontSize={14} color="accentPrimary" fontWeight="bold">
+            Concluídas
+          </Text>
+        </Box>
+      </Box>
+    </Box>
   )
 }

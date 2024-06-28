@@ -22,11 +22,12 @@ const palete = {
 }
 
 export const colors = {
-  mainBackground: palete.neutral[500],
-  mainForeground: palete.neutral[500],
-  textPrimary: palete.blue[500],
-  textSecondary: palete.blue[500],
+  mainBackground: palete.neutral[600],
+  headerBackground: palete.neutral[700],
 
-  accentPrimary: palete.neutral[500],
-  accentSecondary: palete.neutral[500],
+  textPrimary: palete.neutral[100],
+  textSecondary: palete.neutral[300],
+
+  accentPrimary: palete.blue[500],
+  accentSecondary: palete.blue[500],
 }

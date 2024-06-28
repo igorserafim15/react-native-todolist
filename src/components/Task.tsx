@@ -5,12 +5,8 @@ const TaskBox = createBox<Theme>()
 
 type TaskProps = React.ComponentProps<typeof TaskBox>
 
-function Task({ children, ...props }: TaskProps) {
-  return (
-    <TaskBox flexDirection="row" gap="sm" {...props}>
-      {children}
-    </TaskBox>
-  )
+function Task(props: TaskProps) {
+  return <TaskBox flexDirection="row" gap="sm" {...props} />
 }
 
 export { Task, type TaskProps }

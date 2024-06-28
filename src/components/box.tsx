@@ -15,7 +15,6 @@ const BoxComponent = createBox<Theme>()
 type BoxProps = VariantProps<Theme, 'boxVariants'> &
   React.ComponentProps<typeof BoxComponent>
 
-export const Box = createRestyleComponent<BoxProps, Theme>(
-  [variants],
-  BoxComponent,
-)
+const Box = createRestyleComponent<BoxProps, Theme>([variants], BoxComponent)
+
+export { Box, type BoxProps }
