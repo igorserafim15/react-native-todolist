@@ -18,13 +18,16 @@ export function Checkbox({ checked, onChecked }: CheckboxProps) {
   return (
     <Pressable onPress={handleChecked}>
       <CheckboxBox
-        backgroundColor={checked ? 'accentPrimary' : 'mainBackground'}
-        borderColor="accentPrimary"
+        backgroundColor={checked ? 'accent500' : 'neutral400'}
+        borderColor="accent500"
+        justifyContent="center"
+        alignItems="center"
+        borderRadius={999}
         borderWidth={2}
-        height={20}
-        width={20}
+        height={22}
+        width={22}
       >
-        {checked ? <Check /> : undefined}
+        {checked ? <Check size={16} weight="bold" color="#fff" /> : undefined}
       </CheckboxBox>
     </Pressable>
   )

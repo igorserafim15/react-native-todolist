@@ -1,30 +1,44 @@
 import { Theme } from '@/theme'
-import {
-  VariantProps,
-  createBox,
-  createRestyleComponent,
-  createVariant,
-} from '@shopify/restyle'
-import { Pressable, TextInput } from 'react-native'
+import { colors } from '@/theme/colors'
+import { createBox } from '@shopify/restyle'
+import { useState } from 'react'
+import { TextInput } from 'react-native'
 
-const variants = createVariant<Theme, 'inputVariants'>({
-  themeKey: 'inputVariants',
-})
-
-type InputProps = VariantProps<Theme, 'inputVariants'> &
-  React.ComponentProps<typeof Pressable>
-
-const InputComponent = createRestyleComponent<InputProps, Theme>(
-  [variants],
-  TextInput,
-)
+type InputProps = React.ComponentProps<typeof TextInput>
 
 const InputBox = createBox<Theme>()
 
 function Input(props: InputProps) {
+  const [focused, setFocused] = useState(false)
+
+  function handleFocused() {
+    setFocused(true)
+  }
+  function handleBlur() {
+    setFocused(false)
+  }
+
   return (
-    <InputBox>
-      <InputComponent {...props} />
+    <InputBox
+      borderColor={focused ? 'accent500' : 'neutral500'}
+      backgroundColor="neutral500"
+      borderRadius={8}
+      borderWidth={2}
+      flex={1}
+    >
+      <TextInput
+        {...props}
+        placeholderTextColor={colors.neutral300}
+        onFocus={handleFocused}
+        onBlur={handleBlur}
+        style={{
+          fontFamily: 'Inter_400Regular',
+          color: colors.neutral100,
+          paddingHorizontal: 12,
+          fontSize: 16,
+          height: 52,
+        }}
+      />
     </InputBox>
   )
 }
