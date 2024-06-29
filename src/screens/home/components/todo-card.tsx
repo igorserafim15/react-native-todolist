@@ -1,16 +1,18 @@
-import { Todo } from '@/@types'
 import { Box } from '@/components/box'
 import { Button } from '@/components/button'
 import { Checkbox } from '@/components/checkbox'
 import { Text } from '@/components/text'
+import { TodoModel } from '@/database/models/todos-model'
 import { colors } from '@/theme/colors'
+import { withObservables } from '@nozbe/watermelondb/react'
 import { Trash } from 'phosphor-react-native'
+import React from 'react'
 
 type Props = {
-  todo: Todo
+  todo: TodoModel
 }
 
-export function TodoCard({ todo }: Props) {
+function RawTodoCard({ todo }: Props) {
   return (
     <Box
       backgroundColor="neutral500"
@@ -33,3 +35,9 @@ export function TodoCard({ todo }: Props) {
     </Box>
   )
 }
+
+export const TodoCard = React.memo(
+  withObservables(['todo'], ({ todo }) => ({
+    todo,
+  }))(RawTodoCard),
+)
