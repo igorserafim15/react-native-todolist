@@ -1,10 +1,32 @@
 {
   "expo": {
-    "name": "todo-list",
+    "name": "Todo List",
     "slug": "todo-list",
+    "schema": "todo-list",
     "version": "1.0.0",
     "plugins": [
       "expo-font"
-    ]
+    ],
+    "orientation": "portrait",
+    "icon": "./src/assets/icon.png",
+    "splash": {
+      "image": "./src/assets/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#181818"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.igorserafim.todolist"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/adaptive-icon.png",
+        "backgroundColor": "#181818"
+      },
+      "package": "com.igorserafim.todolist"
+    }
   }
 }

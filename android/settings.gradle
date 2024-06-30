@@ -1,4 +1,4 @@
-rootProject.name = 'todolist'
+rootProject.name = 'Todo List'
 
 dependencyResolutionManagement {
   versionCatalogs {

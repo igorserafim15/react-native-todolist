@@ -1,4 +1,4 @@
-package com.todolist
+package com.igorserafim.todolist
 
 import android.os.Build
 import android.os.Bundle

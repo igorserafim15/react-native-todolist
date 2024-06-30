@@ -1,4 +1,4 @@
-package com.todolist
+package com.igorserafim.todolist
 
 import android.app.Application
 import android.content.res.Configuration
