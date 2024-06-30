@@ -6,14 +6,17 @@ import {
   Inter_400Regular,
   Inter_700Bold,
 } from '@expo-google-fonts/inter'
-import { View } from 'react-native'
+import { SplashScreen } from './screens/splash-screen'
 
 type ProvidersProps = { children: React.ReactNode }
 
 export function Providers({ children }: ProvidersProps) {
   const [fontsLoaded] = useFonts({ Inter_400Regular, Inter_700Bold })
 
-  if (!fontsLoaded) return <View />
-
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>
+  return (
+    <ThemeProvider theme={theme}>
+      {!fontsLoaded && <SplashScreen />}
+      {fontsLoaded && children}
+    </ThemeProvider>
+  )
 }
