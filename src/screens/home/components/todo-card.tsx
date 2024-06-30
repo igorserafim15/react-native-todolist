@@ -3,16 +3,25 @@ import { Button } from '@/components/button'
 import { Checkbox } from '@/components/checkbox'
 import { Text } from '@/components/text'
 import { TodoModel } from '@/database/models/todos-model'
+import { deleteTodo } from '@/database/repositories/delete-todo'
+import { updateCompletedTodo } from '@/database/repositories/update-checked-todo'
 import { colors } from '@/theme/colors'
 import { withObservables } from '@nozbe/watermelondb/react'
 import { Trash } from 'phosphor-react-native'
-import React from 'react'
 
 type Props = {
   todo: TodoModel
 }
 
 function RawTodoCard({ todo }: Props) {
+  async function handleChecked(checked: boolean) {
+    await updateCompletedTodo(todo.id, checked)
+  }
+
+  async function handleDelete() {
+    await deleteTodo(todo.id)
+  }
+
   return (
     <Box
       backgroundColor="neutral500"
@@ -23,21 +32,19 @@ function RawTodoCard({ todo }: Props) {
       padding="$3"
       gap="$3"
     >
-      <Checkbox checked={todo.completed} onChecked={() => {}} />
+      <Checkbox checked={todo.completed} onChecked={handleChecked} />
 
       <Text color="neutral200" style={{ flex: 1 }}>
         {todo.description}
       </Text>
 
-      <Button variant="iconSmall">
+      <Button variant="iconSmall" onPress={handleDelete}>
         <Trash color={colors.neutral300} />
       </Button>
     </Box>
   )
 }
 
-export const TodoCard = React.memo(
-  withObservables(['todo'], ({ todo }) => ({
-    todo,
-  }))(RawTodoCard),
-)
+export const TodoCard = withObservables(['todo'], ({ todo }) => ({
+  todo,
+}))(RawTodoCard)

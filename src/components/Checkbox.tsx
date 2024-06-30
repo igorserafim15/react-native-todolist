@@ -16,7 +16,7 @@ export function Checkbox({ checked, onChecked }: CheckboxProps) {
   }
 
   return (
-    <Pressable onPress={handleChecked}>
+    <Pressable onPress={handleChecked} hitSlop={16}>
       <CheckboxBox
         backgroundColor={checked ? 'accent500' : 'neutral400'}
         borderColor="accent500"

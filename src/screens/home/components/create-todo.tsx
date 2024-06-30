@@ -1,9 +1,21 @@
 import { Box } from '@/components/box'
 import { Button } from '@/components/button'
 import { Input } from '@/components/input'
+import { createTodo } from '@/database/repositories/create-todo'
 import { PlusCircle } from 'phosphor-react-native'
+import { useState } from 'react'
 
 export function CreateTodo() {
+  const [description, setDescription] = useState('')
+
+  async function handleCreateTodo() {
+    await createTodo({
+      description,
+      completed: false,
+    })
+    setDescription('')
+  }
+
   return (
     <Box
       paddingHorizontal="$6"
@@ -15,9 +27,13 @@ export function CreateTodo() {
       left={0}
       gap="$2"
     >
-      <Input placeholder="Adicione uma nova tarefa" />
+      <Input
+        placeholder="Adicione uma nova tarefa"
+        onChangeText={setDescription}
+        value={description}
+      />
 
-      <Button variant="iconMedium">
+      <Button variant="iconMedium" onPress={handleCreateTodo}>
         <PlusCircle color="#fff" size={28} />
       </Button>
     </Box>
