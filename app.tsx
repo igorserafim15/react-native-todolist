@@ -1,5 +1,5 @@
-import { Providers } from '@/providers'
-import { Home } from '@/screens/home'
+import { Providers } from '@/ui/providers'
+import { Home } from '@/ui/screens/home'
 import { StatusBar } from 'expo-status-bar'
 import React from 'react'
 
