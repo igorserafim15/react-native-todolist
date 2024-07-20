@@ -1,5 +1,5 @@
 import { Box } from '@/ui/components/box'
-import Logo from '@/assets/logo.svg'
+import Logo from '@/ui/assets/logo.svg'
 import { FeedbackBar } from './components/feedback-bar'
 import { TodoEmpty } from './components/todo-empty'
 import { TodoCard } from './components/todo-card'

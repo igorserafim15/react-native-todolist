@@ -1,6 +1,6 @@
 import { Box } from '@/ui/components/box'
 import { Text } from '@/ui/components/text'
-import Clipboard from '@/assets/clipboard.svg'
+import Clipboard from '@/ui/assets/clipboard.svg'
 
 export function TodoEmpty() {
   return (
